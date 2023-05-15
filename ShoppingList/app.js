@@ -95,4 +95,14 @@
         };
     }
 
+
+    // Using a factory did not work, I am unsure why, I think they have different services each?
+    // //Factory
+    // function ShoppingListFactory(){
+    //     var factory =  () => {
+    //         return new ShoppingListCheckOffService();
+    //     };
+    //     return factory
+    // }
+
     })();
