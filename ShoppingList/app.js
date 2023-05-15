@@ -41,7 +41,7 @@
         }
         console.log("bought List: " + list1.toBuyList);
         
-        list1.isEmpty = list1.toBuyList.length == 0;
+        list1.isEmpty = ShoppingListCheckOffService.isEmpty();
     }
 
 
@@ -51,10 +51,10 @@
         var list2 = this;
         list2.boughtList = ShoppingListCheckOffService.getBoughtItems();
 
-        list2.isEmpty = list2.boughtList.length == 0;
+        list2.isEmpty = ShoppingListCheckOffService.isEmpty2();
 
 
-        console.log("bought List: " + list2.boughtList);
+        console.log("bought List:l " + list2.isEmpty);
     }
 
     //Service
@@ -77,6 +77,13 @@
             return boughtList;
         };
 
+        service.isEmpty = () => {
+            return toBuyList.length == 0;
+        }
+
+        service.isEmpty2 = () => {
+            return boughtList.length == 0;
+        }
 
         service.buyItem = (itemIndex) => {
             haveModified = true;
