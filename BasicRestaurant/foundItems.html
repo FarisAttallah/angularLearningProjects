@@ -1,0 +1,8 @@
+<div class="loader"></div>
+<ul>
+    <li ng-repeat = "item in menu.found">
+       Item Name:  {{item.name}}, Item Short Name: {{item.short_name}}, Item description: {{item.description}}
+        <button ng-click="menu.onRemove({index: $index});">Don't want this one!</button>
+    </li>
+</ul>
+<div class="error">Nothing found</div>
