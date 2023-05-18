@@ -41,31 +41,6 @@ function MenuNarrowDirectiveController (){
     menu.isEmpty = () => {return menu.found.length == 0}
 
 }
-var tempItems = [{
-    id: "A",
-    short_name: "A1",
-    name : "Won Ton Soup",
-    description:"chicken-stuffed won tons in clear chicken broth with white meat chicken pieces and a few scallions	"}
-    ,
-    {
-        id: "A",
-        short_name: "A1",
-        name : "Won Soup",
-        description:"chicken-stuffed won tons in clear chicken broth with white meat chicken pieces and a few scallions	"  
-    }
-    ,{
-        id: "A",
-        short_name: "A1",
-        name : "Won Ton ",
-        description:"chicken broth with egg drop	"  
-    },
-    {
-        id: "A",
-        short_name: "A1",
-        name : "Ton Soup",
-        description:"clear chicken broth with mixed vegetables (carrots, cabbage, baby corn, mushroom, snow peas)"  
-    }  
-]
 MenuNarrowController.$inject = ['MenuNarrowService'];
 function MenuNarrowController (MenuNarrowService){
     var menu = this;
@@ -77,7 +52,6 @@ function MenuNarrowController (MenuNarrowService){
         promise.then (response => {
             menu.found =response;
         })
-        console.log(menu.found)
     }
 
     menu.removeItem = (index) => {
