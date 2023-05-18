@@ -70,7 +70,6 @@ function MenuNarrowService($http,ApiBasePath){
     var service = this;
 
 
-    //not using it because I can't access the api.
     service.getMenuItems = function (searchWord) {
         return $http({
           method: "GET",
@@ -86,7 +85,6 @@ function MenuNarrowService($http,ApiBasePath){
 
     service.searchForWord = (searchWord,response) => {
 
-        // menuItems = service.getMenuItems().data;
             var found = [];
             if (searchWord != ""){
                 for (let category in response){
