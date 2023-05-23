@@ -17,12 +17,10 @@
                 url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json"
             
             }).then(response => {
-                console.log("categories 2are " + categories);
                 var categoriesPromise = response.data;
                 for (let category in categoriesPromise){
                     categories.push(category);
                 }
-                console.log("categories are " + categories);
                 return categories;
             });
         };
