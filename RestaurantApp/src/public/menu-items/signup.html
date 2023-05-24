@@ -1,0 +1,55 @@
+<div>
+    <div class="container">
+        <h2 id="menu-categories-title" class="text-center">NewsFeed</h2>
+        <div class="text-center">Sign Up for NewsFeed</div>
+      </div>
+      <div class = "container">
+        <form name ='signup' novalidate style="color: black;">
+            <input type = "text" name = "firstname" placeholder="First Name"
+            ng-model="signUpController.user.firstname"
+            required>
+            
+            <span style="color: white;"
+            ng-if="(signup.firstname.$error.required) && signup.firstname.$touched">
+            firstname must be at least 4 characters long
+            </span>
+          
+            <br><br>
+            <input type = "text" name = "lastname" placeholder="Last Name"
+            ng-model="signUpController.user.lastname"
+            required>
+
+            <span style="color: white;"
+            ng-if="(signup.lastname.$error.required) && signup.lastname.$touched">
+            lastname must be at least 4 characters long
+            </span>
+            <br><br>
+            <input type="email" name="email" placeholder="Email"
+            ng-model="signUpController.user.email"
+            required>
+
+            <span style="color: white;" ng-if="signup.email.$invalid && signup.email.$touched">
+                Must be a valid email address: handle@domain format
+              </span>
+
+              <br><br>
+
+
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signUpController.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+
+          <span style="color: white;" ng-if="signup.phone.$invalid && signup.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+
+          <br><br>
+          <button
+          ng-disabled="signup.$invalid"
+          ng-click="signUpController.save()"
+          ui-sref ='public.home'>Submit</button>
+
+          </form>
+      </div>
+      
+</div>

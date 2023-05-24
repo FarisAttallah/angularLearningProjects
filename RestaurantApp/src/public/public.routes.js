@@ -30,6 +30,26 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+
+    .state('public.signup',{
+      url:'/menu/signup',
+      templateUrl  : 'src/public/menu-items/signup.html',
+      controller   : 'SignUpController',
+      controllerAs : 'signUpController' 
+    })
+    .state('public.myinfo', {
+      url: '/menu/myinfo',
+      templateUrl  : 'src/public/menu-items/myinfo.html',
+      controller   : "SignUpController",
+      controllerAs : "myInfo",
+      resolve      : {
+        user       : ['SignUpService', (MenuService) => {
+          return MenuService.getUser();
+        }]
+      }
+    })
+
+
     .state('public.menuitems', {
       url: '/menu/{category}',
       templateUrl: 'src/public/menu-items/menu-items.html',
